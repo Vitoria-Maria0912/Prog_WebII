@@ -1,3 +1,6 @@
+import { Filme } from "./Filme";
+import { Cliente } from "./Cliente";
+
 class Administrador {
 
     private name: string;
@@ -27,4 +30,11 @@ class Administrador {
     public getListaDeClientes(){
         return this.listaDeClientes;
     }
+}
+
+export interface AdministradorInterface{
+    nome: string,
+    login: Map<string, string>,
+    listaDeFilmes: Filme[]
+    listaDeClientes: Cliente[]
 }
