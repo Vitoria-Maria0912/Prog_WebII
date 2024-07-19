@@ -1,29 +1,25 @@
-# Movies Collection
+<div align="center">
+    <h1>Programação Web II</h1>
+    <h2>Movies Collection</h2>
+</div>
 
-## Sistem especification
-- The sistem will have a manager who will coordenate the collection. Will not be created, the sistem will alredy have a manager befora have any client.
-- A client will can put a movie on a list of favorits. Can be created any moment.
-- Every movie will have a gender: action, adventure, romance, drama, fantasy, comedy, fiction or horror. 
+<div><h3>Especificação do Sistema</h3>
+    <p>O sistema é uma locadora de filmes, onde o usuário poderá visualizá-los, favoritá-los e alugá-los, o usuário deverá estar cadastrado no sistema. Após o cadastro, o usuário poderá visualizar os filmes disponíveis.<p>
+    <p>Há um administrador do sistema, apenas ele poderá criar, deletar e editar filmes. Ele não será criado, já existirá por default.<p>
+    <p>Cada filme tem título, sinopsis, gênero, classificação indicativa.<p> 
+</div>
 
-## Manager Main
-- List all movies
-- List movies by gender
-- Add movie
-- Delete movie
-- Update movie
-- List clients
-- Log out
+<div><h3>Funcionalidades do Administrador</h3>
+    <li>Listar filmes</li>
+    <li>Adicionar filmes</li>
+    <li>Deletar filmes</li>
+    <li>Atualizar filmes</li>
+    <li>Listar Clientes</li>
+    <li>Log out</li>
+    <p><p>
+</div>
 
-## Client Main
-- List all movies
-- List movies by gender
-- Log out
-- Create acount
-- Choose movie
-
-## Especification movie
-- ID
-- Title
-- Gender
-- Description
-
+<div><h3>Funcionalidades do Cliente</h3>
+    <li>Listar filmes disponíveis</li>
+    <li>Alugar filmes</li>
+</div>
