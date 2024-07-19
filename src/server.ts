@@ -5,7 +5,7 @@ const port = 3000;
 
 app.use(express.json());
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/filmes', (req: Request, res: Response) => {
   res.send('Hello, world!');
 });
 
