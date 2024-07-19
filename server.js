@@ -1,15 +1,14 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const app = (0, express_1.default)();
+const express = require('express');
+const app = express();
 const port = 3000;
-app.use(express_1.default.json());
+const path = require('path');
+
 app.get('/', (req, res) => {
-    res.send('Hello, world!');
+    res.send('Hello World!');
 });
+
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Server running at http:localhost:${port}/`);
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
