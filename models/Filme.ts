@@ -37,6 +37,15 @@ export class Filme {
     public getClassificacaoIndicativa(): string {
         return this.classificacaoIndicativa;
     }
+
+    public getStatus(): Status {
+        return this.status;
+    }
+
+    public setStatus() {
+        this.status = (this.status === Status.DISPONIVEL ? Status.ALUGADO : Status.DISPONIVEL);
+    }
+    
 }
 
 export interface FilmeInterface {
