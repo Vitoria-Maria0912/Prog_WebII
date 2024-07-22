@@ -2,14 +2,14 @@ export class Filme {
 
     private id: number;
     private titulo: string;
-    private descricao: string;
+    private sinopse: string;
     private genero: string;
     private classificacaoIndicativa: string;
     
-    constructor(id: number, titulo: string, descricao: string, genero: string, classificacaoIndicativa: string) {
+    constructor(id: number, titulo: string, sinopse: string, genero: string, classificacaoIndicativa: string) {
         this.id = id;
         this.titulo = titulo;
-        this.descricao = descricao;
+        this.sinopse = sinopse;
         this.genero = genero;
         this.classificacaoIndicativa = classificacaoIndicativa;
     }
@@ -22,8 +22,8 @@ export class Filme {
         return this.titulo;
     }
 
-    public getDescricao(): string {
-        return this.descricao;
+    public getSinopse(): string {
+        return this.sinopse;
     }
 
     public getGenero(): string {
@@ -38,7 +38,7 @@ export class Filme {
 export interface FilmeInterface {
     id: number;
     titulo: string,
-    descricao: string,
+    sinopse: string,
     genero: string,
     classificacaoIndicativa: string
 }

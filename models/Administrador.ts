@@ -1,18 +1,17 @@
-import { Filme } from "./Filme";
-import { Cliente } from "./Cliente";
+import path from 'path';
 
 class Administrador {
 
     private name: string;
     private login: Map<string, string>;
-    private listaDeFilmes: Filme[];
-    private listaDeClientes: Cliente[];    
+    private listaDeFilmes;
+    private listaDeClientes;    
 
-    constructor(name: string, login: Map<string, string>, listaDeFilmes: Filme[], listaDeClientes: Cliente[]) {
+    constructor(name: string, login: Map<string, string>) {
         this.name = name;
         this.login = login;
-        this.listaDeFilmes = listaDeFilmes;
-        this.listaDeClientes = listaDeClientes;    
+        this.listaDeFilmes = path.join(__dirname, '../database', 'filmes.json');
+        this.listaDeClientes = path.join(__dirname, '../database', 'clientes.json');;    
     }
 
     public getName(): string {
@@ -32,9 +31,7 @@ class Administrador {
     }
 }
 
-export interface AdministradorInterface{
+export interface AdministradorInterface {
     nome: string,
-    login: Map<string, string>,
-    listaDeFilmes: Filme[]
-    listaDeClientes: Cliente[]
+    login: Map<string, string>
 }

@@ -2,14 +2,20 @@ import { Filme } from "./Filme";
 
 export class Cliente{
 
+    private id: number;
     private nome: string;
     private login: Map<string, string>;
     private listaDeFilmes: Filme[];
 
-    constructor(nome: string, login: Map<string, string>, listaDeFilmes: Filme[]) {
+    constructor(id: number, nome: string, login: Map<string, string>, listaDeFilmes: Filme[]) {
+        this.id = id;
         this.nome = nome;
         this.login = login;
         this.listaDeFilmes = listaDeFilmes;
+    }
+
+    public getId(): number{
+        return this.id;
     }
 
     public getnome(): string {
@@ -25,7 +31,8 @@ export class Cliente{
     }
 }
 
-export interface ClienteInterface{
+export interface ClienteInterface {
+    id: number,
     nome: string,
     login: Map<string, string>,
     listaDeFilmes: Filme[]
