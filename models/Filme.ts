@@ -1,8 +1,11 @@
+import { Status } from "./Status";
+
 export class Filme {
 
     private id: number;
     private titulo: string;
     private sinopse: string;
+    private status: Status;
     private genero: string;
     private classificacaoIndicativa: string;
     
@@ -10,6 +13,7 @@ export class Filme {
         this.id = id;
         this.titulo = titulo;
         this.sinopse = sinopse;
+        this.status = Status.DISPONIVEL;
         this.genero = genero;
         this.classificacaoIndicativa = classificacaoIndicativa;
     }
