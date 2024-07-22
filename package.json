@@ -10,7 +10,7 @@
     "dev": "ts-node src/server.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vitória Maria do Nascimento",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2"
