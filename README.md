@@ -4,7 +4,7 @@
 </div>
 
 <div><h3>Especificação do Sistema</h3>
-    <p>O sistema é uma locadora de filmes, onde o usuário poderá visualizá-los, favoritá-los e alugá-los, o usuário deverá estar cadastrado no sistema. Após o cadastro, o usuário poderá visualizar os filmes disponíveis.<p>
+    <p>O sistema é uma coleção de filmes, onde o usuário poderá visualizá-los, favoritá-los e alugá-los, o usuário deverá estar cadastrado no sistema. Após o cadastro, o usuário poderá visualizar os filmes disponíveis.<p>
     <p>Há um administrador do sistema, apenas ele poderá criar, deletar e editar filmes. Ele não será criado, já existirá por default.<p>
     <p>Cada filme tem título, sinopsis, gênero, classificação indicativa.<p> 
 </div>
