@@ -93,7 +93,7 @@ app.post('/clientes', (req, res) => {
   const clientes = readClientesFromFile();
   const { nome, login, listaDeFilmes } = req.body;
   const novoCliente: ClienteInterface = {
-      id: clientes.length ? clientes[clientes.length - 1].id + 1 : 1,
+      id: clientes.length ? String(clientes[clientes.length - 1].id + 1) : "1",
       nome, login, listaDeFilmes
   };
   // Verificar se todos os campos obrigatórios estão presentes
@@ -117,7 +117,7 @@ app.post('/filmes', (req, res) => {
 
   // Criar um novo filme
   const novoFilme: FilmeInterface = {
-    id: filmes.length ? filmes[filmes.length - 1].id + 1 : 1,
+    id: filmes.length ? String(filmes[filmes.length - 1].id + 1) : "1",
     titulo, sinopse, genero, classificacaoIndicativa
   };
 

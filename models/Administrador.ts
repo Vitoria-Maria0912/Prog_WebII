@@ -2,16 +2,22 @@ import path from 'path';
 
 class Administrador {
 
+    private id: string;
     private name: string;
     private login: Map<string, string>;
     private listaDeFilmes;
     private listaDeClientes;    
 
-    constructor(name: string, login: Map<string, string>) {
+    constructor(id: string, name: string, login: Map<string, string>) {
+        this.id = id;
         this.name = name;
         this.login = login;
         this.listaDeFilmes = path.join(__dirname, '../database', 'filmes.json');
         this.listaDeClientes = path.join(__dirname, '../database', 'clientes.json');;    
+    }
+
+    public getId(): string {
+        return this.id;
     }
 
     public getName(): string {
@@ -32,6 +38,7 @@ class Administrador {
 }
 
 export interface AdministradorInterface {
+    id: string,
     nome: string,
     login: Map<string, string>
 }
