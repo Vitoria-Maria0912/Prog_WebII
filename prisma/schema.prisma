@@ -13,12 +13,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Book {
-  id        String   @id @default(cuid())
-  title     String
-  code_book String @unique
-  price Decimal
-  create_at DateTime @default(now())
-
-  @@map("books")
+model Cliente {
+  id            Int     @id @default(autoincrement())
+  nome          String
+  login         String
+  listaDeFilmes Filme[] @relation("ClienteFilmes")
 }
+
+model Filme {
+  id                    Int      @id @default(autoincrement())
+  titulo                String
+  sinopse               String
+  genero                String
+  classificacaoIndicativa String
+  clientes              Cliente[] @relation("ClienteFilmes")
+}
+

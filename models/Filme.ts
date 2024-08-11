@@ -2,14 +2,14 @@ import { Status } from "./Status";
 
 export class Filme {
 
-    private id: string;
+    private id: number;
     private titulo: string;
     private sinopse: string;
     private status: Status;
     private genero: string;
     private classificacaoIndicativa: string;
     
-    constructor(id: string, titulo: string, sinopse: string, genero: string, classificacaoIndicativa: string) {
+    constructor(id: number, titulo: string, sinopse: string, genero: string, classificacaoIndicativa: string) {
         this.id = id;
         this.titulo = titulo;
         this.sinopse = sinopse;
@@ -18,7 +18,7 @@ export class Filme {
         this.classificacaoIndicativa = classificacaoIndicativa;
     }
 
-    public getId(): string {
+    public getId(): number {
         return this.id;
     }
 
@@ -49,7 +49,7 @@ export class Filme {
 }
 
 export interface FilmeInterface {
-    id: string;
+    id: number;
     titulo: string,
     sinopse: string,
     genero: string,

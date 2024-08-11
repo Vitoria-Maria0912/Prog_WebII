@@ -2,19 +2,19 @@ import { Filme } from "./Filme";
 
 export class Cliente{
 
-    private id: string;
+    private id: number;
     private nome: string;
     private login: Map<string, string>;
     private listaDeFilmes: Filme[];
 
-    constructor(id: string, nome: string, login: Map<string, string>, listaDeFilmes: Filme[]) {
+    constructor(id: number, nome: string, login: Map<string, string>, listaDeFilmes: Filme[]) {
         this.id = id;
         this.nome = nome;
         this.login = login;
         this.listaDeFilmes = listaDeFilmes;
     }
 
-    public getId(): string {
+    public getId(): number {
         return this.id;
     }
 
@@ -32,7 +32,7 @@ export class Cliente{
 }
 
 export interface ClienteInterface {
-    id: string,
+    id: number,
     nome: string,
     login: Map<string, string>,
     listaDeFilmes: Filme[]
