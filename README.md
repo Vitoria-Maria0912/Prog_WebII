@@ -23,3 +23,7 @@
     <li>Listar filmes disponíveis</li>
     <li>Alugar filmes</li>
 </div>
+
+<div><br>
+    <a href='https://app.swaggerhub.com/apis/VitoriaMariadoNascimento/Movies_Collection'>Documentação Swagger<a>
+<div>

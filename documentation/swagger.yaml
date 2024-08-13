@@ -1,0 +1,341 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/VitoriaMariadoNascimento/Movies_Collection/1.0.0
+info:
+  version: "1.0.0"
+  title: Movies_Collection
+  description: The API for the Movies Collection 
+paths:
+  /Filmes:
+    get:
+      tags:
+        - Filme
+      description: Returns all registered movies
+      operationId: getMovies
+      responses:
+        '200':
+          description: All the movies
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FilmeInterface'
+    post:
+      tags:
+        - Filme
+      description: Creates a new movie
+      operationId: createMovie
+      requestBody:
+        description: Movie to be created
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FilmeInterface'
+      responses:
+        '201':
+          description: Movie successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FilmeInterface'
+  /Filmes/{id}:
+    get:
+      tags:
+        - Filme
+      description: Returns a single movie by ID
+      operationId: getMovieById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Movie found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FilmeInterface'
+    put:
+      tags:
+        - Filme
+      description: Updates a movie by ID
+      operationId: updateMovieById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        description: Movie data to be updated
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FilmeInterface'
+      responses:
+        '200':
+          description: Movie successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FilmeInterface'
+    delete:
+      tags:
+        - Filme
+      description: Deletes a movie by ID
+      operationId: deleteMovieById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '204':
+          description: Movie successfully deleted
+
+  /Clientes:
+    get:
+      tags:
+        - Cliente
+      description: Returns all registered clients
+      operationId: getClientes
+      responses:
+        '200':
+          description: All the clients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClienteInterface'
+    post:
+      tags:
+        - Cliente
+      description: Creates a new client
+      operationId: createClient
+      requestBody:
+        description: Client to be created
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClienteInterface'
+      responses:
+        '201':
+          description: Client successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClienteInterface'
+  /Clientes/{id}:
+    get:
+      tags:
+        - Cliente
+      description: Returns a single client by ID
+      operationId: getClientById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Client found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClienteInterface'
+    put:
+      tags:
+        - Cliente
+      description: Updates a client by ID
+      operationId: updateClientById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        description: Client data to be updated
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClienteInterface'
+      responses:
+        '200':
+          description: Client successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClienteInterface'
+    delete:
+      tags:
+        - Cliente
+      description: Deletes a client by ID
+      operationId: deleteClientById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '204':
+          description: Client successfully deleted
+
+  /Administradores:
+    get:
+      tags:
+        - Administrador
+      description: Returns all registered administrators
+      operationId: getAdministradores
+      responses:
+        '200':
+          description: All the administrators
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdministradorInterface'
+    post:
+      tags:
+        - Administrador
+      description: Creates a new administrator
+      operationId: createAdministrador
+      requestBody:
+        description: Administrator to be created
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdministradorInterface'
+      responses:
+        '201':
+          description: Administrator successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdministradorInterface'
+  /Administradores/{id}:
+    get:
+      tags:
+        - Administrador
+      description: Returns a single administrator by ID
+      operationId: getAdministradorById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Administrator found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdministradorInterface'
+    put:
+      tags:
+        - Administrador
+      description: Updates an administrator by ID
+      operationId: updateAdministradorById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        description: Administrator data to be updated
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdministradorInterface'
+      responses:
+        '200':
+          description: Administrator successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdministradorInterface'
+    delete:
+      tags:
+        - Administrador
+      description: Deletes an administrator by ID
+      operationId: deleteAdministradorById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '204':
+          description: Administrator successfully deleted
+
+components:
+  schemas:
+    FilmeInterface:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        titulo:
+          type: string
+        sinopse:
+          type: string
+        genero:
+          type: string
+        classificacaoIndicativa:
+          type: string
+    ClienteInterface:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        nome:
+          type: string
+        login:
+          type: object
+          additionalProperties:
+            type: string
+        listaDeFilmes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FilmeInterface'
+    AdministradorInterface:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        nome:
+          type: string
+        login:
+          type: object
+          additionalProperties:
+            type: string

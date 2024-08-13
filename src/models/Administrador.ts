@@ -1,19 +1,21 @@
 import path from 'path';
+import { Filme } from './Filme';
+import { Cliente } from './Cliente';
 
 class Administrador {
 
     private id: number;
     private name: string;
     private login: Map<string, string>;
-    private listaDeFilmes;
-    private listaDeClientes;    
+    private listaDeFilmes: Filme[];
+    private listaDeClientes: Cliente[];    
 
     constructor(id: number, name: string, login: Map<string, string>) {
         this.id = id;
         this.name = name;
         this.login = login;
-        this.listaDeFilmes = path.join(__dirname, '../database', 'filmes.json');
-        this.listaDeClientes = path.join(__dirname, '../database', 'clientes.json');;    
+        this.listaDeFilmes = [];
+        this.listaDeClientes = [];    
     }
 
     public getId(): number {
