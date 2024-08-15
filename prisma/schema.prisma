@@ -27,19 +27,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Cliente {
+model Client {
   id            Int     @id @default(autoincrement())
-  nome          String
+  name          String
   login         String
-  listaDeFilmes Filme[] @relation("ClienteFilmes")
+  collectionOfMovies Movie[] @relation("ClientMovies")
 }
 
-model Filme {
+model Movie {
   id                    Int      @id @default(autoincrement())
-  titulo                String
-  sinopse               String
-  genero                String
-  classificacaoIndicativa String
-  clientes              Cliente[] @relation("ClienteFilmes")
+  title                String
+  synopsis               String
+  genre                String
+  ageRating String
+  customers              Client[] @relation("ClientMovies")
 }
 

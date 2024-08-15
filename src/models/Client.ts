@@ -31,7 +31,7 @@ export class Client {
     }
 }
 
-export interface ClienteInterface {
+export interface ClientInterface {
     id: number,
     name: string,
     login: Map<string, string>,

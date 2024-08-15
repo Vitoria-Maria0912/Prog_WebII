@@ -1,5 +1,5 @@
 import { Router } from 'express';
 
-const costumersRoutes = Router();
+const customersRoutes = Router();
 
-export { costumersRoutes };
+export { customersRoutes };

@@ -45,7 +45,6 @@ export class Movie {
     public setStatus() {
         this.status = (this.status === Status.AVALIABLE ? Status.UNAVALIABLE : Status.AVALIABLE);
     }
-    
 }
 
 export interface MovieInterface {

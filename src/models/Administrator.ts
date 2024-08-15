@@ -7,14 +7,14 @@ class Administrator {
     private name: string;
     private login: Map<string, string>;
     private collectionOfMovies: Movie[];
-    private collectionOfCostumers: Client[];    
+    private collectionOfCustomers: Client[];    
 
     constructor(id: number, name: string, login: Map<string, string>) {
         this.id = id;
         this.name = name;
         this.login = login;
         this.collectionOfMovies = [];
-        this.collectionOfCostumers = [];    
+        this.collectionOfCustomers = [];    
     }
 
     public getId(): number {
@@ -33,8 +33,8 @@ class Administrator {
         return this.collectionOfMovies;
     }
 
-    public getCollectionOfCostumers(){
-        return this.collectionOfCostumers;
+    public getCollectionOfCustomers(){
+        return this.collectionOfCustomers;
     }
 }
 
