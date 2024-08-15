@@ -1,21 +1,20 @@
-import path from 'path';
-import { Filme } from './Filme';
-import { Cliente } from './Cliente';
+import { Movie } from './Movie';
+import { Client } from './Client';
 
-class Administrador {
+class Administrator {
 
     private id: number;
     private name: string;
     private login: Map<string, string>;
-    private listaDeFilmes: Filme[];
-    private listaDeClientes: Cliente[];    
+    private collectionOfMovies: Movie[];
+    private collectionOfCostumers: Client[];    
 
     constructor(id: number, name: string, login: Map<string, string>) {
         this.id = id;
         this.name = name;
         this.login = login;
-        this.listaDeFilmes = [];
-        this.listaDeClientes = [];    
+        this.collectionOfMovies = [];
+        this.collectionOfCostumers = [];    
     }
 
     public getId(): number {
@@ -30,17 +29,17 @@ class Administrador {
         return this.login;
     }
 
-    public getListaDeFilmes(){
-        return this.listaDeFilmes;
+    public getCollectionOfMovies(){
+        return this.collectionOfMovies;
     }
 
-    public getListaDeClientes(){
-        return this.listaDeClientes;
+    public getCollectionOfCostumers(){
+        return this.collectionOfCostumers;
     }
 }
 
-export interface AdministradorInterface {
+export interface AdministratorInterface {
     id: number,
-    nome: string,
+    name: string,
     login: Map<string, string>
 }

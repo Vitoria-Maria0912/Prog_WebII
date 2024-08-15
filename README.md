@@ -25,5 +25,5 @@
 </div>
 
 <div><br>
-    <a href='https://app.swaggerhub.com/apis/VitoriaMariadoNascimento/Movies_Collection'>Documentação Swagger<a>
+    <a href='https://app.swaggerhub.com/apis/VitoriaMariadoNascimento/Movies_Collection' target="_blank">Documentação Swagger<a>
 <div>
