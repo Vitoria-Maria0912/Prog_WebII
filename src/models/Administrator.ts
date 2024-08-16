@@ -1,5 +1,5 @@
 import { Movie } from './Movie';
-import { Client } from './Client';
+import { Customer } from './Customer';
 
 class Administrator {
 
@@ -7,7 +7,7 @@ class Administrator {
     private name: string;
     private login: Map<string, string>;
     private collectionOfMovies: Movie[];
-    private collectionOfCustomers: Client[];    
+    private collectionOfCustomers: Customer[];    
 
     constructor(id: number, name: string, login: Map<string, string>) {
         this.id = id;

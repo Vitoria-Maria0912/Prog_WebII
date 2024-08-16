@@ -6,74 +6,74 @@ const prisma = new PrismaClient();
 export class CustomersController {
 
   // GET all customers
-  async getAll(req: Request, res: Response) {
+  async getAllCustomers(req: Request, res: Response) {
     try {
-      const customers = await prisma.client.findMany();
+      const customers = await prisma.customer.findMany();
       res.status(200).json(customers);
     } catch (error) {
       res.status(500).json({ error: 'Error trying to get all customers!' });
     }
   }
 
-  // GET client by ID
-  async getById(req: Request, res: Response) {
+  // GET customer by ID
+  async getCustomerById(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const client = await prisma.client.findUnique({
+      const customer = await prisma.customer.findUnique({
         where: { id: parseInt(id) },
       });
-      if (client) {
-        res.status(200).json(client);
+      if (customer) {
+        res.status(200).json(customer);
       } else {
-        res.status(404).json({ message: 'Client not found!' });
+        res.status(404).json({ message: 'Customer not found!' });
       }
     } catch (error) {
-      res.status(500).json({ error: 'Error trying to get client!' });
+      res.status(500).json({ error: 'Error trying to get customer!' });
     }
   }
 
-  // POST to add a new client
-  async create(req: Request, res: Response) {
+  // POST to add a new customer
+  async createCustomer(req: Request, res: Response) {
     const { name, login, collectionOfMovies } = req.body;
     try {
       if (!name || !login) {
         return res.status(400).json({ error: 'All fields required!' });
       }
 
-      const newClient = await prisma.client.create({
+      const newCustomer = await prisma.customer.create({
         data: { name, login },
       });
-      res.status(201).json(newClient);
+      res.status(201).json(newCustomer);
     } catch (error) {
-      res.status(500).json({ error: 'Error trying to create a client!' });
+      res.status(500).json({ error: 'Error trying to create a customer!' });
     }
   }
 
-  // PUT to update client
-  async update(req: Request, res: Response) {
+  // PUT to update customer
+  async updateCustomer(req: Request, res: Response) {
     const { id } = req.params;
     const { name, login, collectionOfMovies } = req.body;
     try {
-      const client = await prisma.client.update({
+      const customer = await prisma.customer.update({
         where: { id: parseInt(id) },
         data: { name, login },
       });
-      res.status(200).json(client);
+      res.status(200).json(customer);
     } catch (error) {
-      res.status(404).json({ message: 'Client not found!' });
+      res.status(404).json({ message: 'Customer not found!' });
     }
   }
 
-  // DELETE a client by ID
-  async delete(req: Request, res: Response) {
+  // DELETE a customer by ID
+  async deleteCustomer(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const client = await prisma.client.delete({
+      const customer = await prisma.customer.delete({
         where: { id: parseInt(id) },
       });
-      res.status(200).json(client);
+      res.status(200).json(customer);
     } catch (error) {
-      res.status(404).json({ message: 'Client not found!' });
+      res.status(404).json({ message: 'Customer not found!' });
     }
   }
 }

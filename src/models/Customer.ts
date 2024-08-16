@@ -1,6 +1,6 @@
 import { Movie } from "./Movie";
 
-export class Client {
+export class Customer {
 
     private id: number;
     private name: string;
@@ -31,7 +31,7 @@ export class Client {
     }
 }
 
-export interface ClientInterface {
+export interface CustomerInterface {
     id: number,
     name: string,
     login: Map<string, string>,

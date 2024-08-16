@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export class MoviesController {
 
   // GET all movies
-  async getAll(req: Request, res: Response) {
+  async getAllMovies(req: Request, res: Response) {
     try {
       const movies = await prisma.movie.findMany();
       res.status(200).json(movies);
@@ -16,7 +16,7 @@ export class MoviesController {
   }
 
   // GET movie by ID
-  async getById(req: Request, res: Response) {
+  async getMovieById(req: Request, res: Response) {
     const { id } = req.params;
     try {
       const movie = await prisma.movie.findUnique({
@@ -33,7 +33,7 @@ export class MoviesController {
   }
 
   // POST to add a new movie
-  async create(req: Request, res: Response) {
+  async createMovie(req: Request, res: Response) {
     const { title, synopsis, genre, ageRating } = req.body;
     try {
       if (!title || !synopsis || !genre || !ageRating) {
@@ -51,7 +51,7 @@ export class MoviesController {
   }
 
   // PUT to update movie
-  async update(req: Request, res: Response) {
+  async updateMovie(req: Request, res: Response) {
     const { id } = req.params;
     const { title, synopsis, genre, ageRating } = req.body;
     try {
@@ -66,7 +66,7 @@ export class MoviesController {
   }
 
   // DELETE a movie by ID
-  async delete(req: Request, res: Response) {
+  async deleteMovie(req: Request, res: Response) {
     const { id } = req.params;
     try {
       const movie = await prisma.movie.delete({

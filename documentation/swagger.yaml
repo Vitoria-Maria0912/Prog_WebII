@@ -7,10 +7,10 @@ info:
   title: Movies_Collection
   description: The API for the Movies Collection 
 paths:
-  /Filmes:
+  /Movies:
     get:
       tags:
-        - Filme
+        - Movie
       description: Returns all registered movies
       operationId: getMovies
       responses:
@@ -21,10 +21,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FilmeInterface'
+                  $ref: '#/components/schemas/MovieInterface'
     post:
       tags:
-        - Filme
+        - Movie
       description: Creates a new movie
       operationId: createMovie
       requestBody:
@@ -33,18 +33,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilmeInterface'
+              $ref: '#/components/schemas/MovieInterface'
       responses:
         '201':
           description: Movie successfully created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FilmeInterface'
-  /Filmes/{id}:
+                $ref: '#/components/schemas/MovieInterface'
+  /Movies/{id}:
     get:
       tags:
-        - Filme
+        - Movie
       description: Returns a single movie by ID
       operationId: getMovieById
       parameters:
@@ -60,10 +60,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FilmeInterface'
+                $ref: '#/components/schemas/MovieInterface'
     put:
       tags:
-        - Filme
+        - Movie
       description: Updates a movie by ID
       operationId: updateMovieById
       parameters:
@@ -79,17 +79,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilmeInterface'
+              $ref: '#/components/schemas/MovieInterface'
       responses:
         '200':
           description: Movie successfully updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FilmeInterface'
+                $ref: '#/components/schemas/MovieInterface'
     delete:
       tags:
-        - Filme
+        - Movie
       description: Deletes a movie by ID
       operationId: deleteMovieById
       parameters:
@@ -103,46 +103,46 @@ paths:
         '204':
           description: Movie successfully deleted
 
-  /Clientes:
+  /Customers:
     get:
       tags:
-        - Cliente
-      description: Returns all registered clients
-      operationId: getClientes
+        - Customer
+      description: Returns all registered customers
+      operationId: getCustomers
       responses:
         '200':
-          description: All the clients
+          description: All the customers
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ClienteInterface'
+                  $ref: '#/components/schemas/CustomerInterface'
     post:
       tags:
-        - Cliente
-      description: Creates a new client
-      operationId: createClient
+        - Customer
+      description: Creates a new customer
+      operationId: createCustomer
       requestBody:
-        description: Client to be created
+        description: Customer to be created
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ClienteInterface'
+              $ref: '#/components/schemas/CustomerInterface'
       responses:
         '201':
-          description: Client successfully created
+          description: Customer successfully created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClienteInterface'
-  /Clientes/{id}:
+                $ref: '#/components/schemas/CustomerInterface'
+  /Customers/{id}:
     get:
       tags:
-        - Cliente
-      description: Returns a single client by ID
-      operationId: getClientById
+        - Customer
+      description: Returns a single customer by ID
+      operationId: getCustomerById
       parameters:
         - name: id
           in: path
@@ -152,16 +152,16 @@ paths:
             format: int32
       responses:
         '200':
-          description: Client found
+          description: Customer found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClienteInterface'
+                $ref: '#/components/schemas/CustomerInterface'
     put:
       tags:
-        - Cliente
-      description: Updates a client by ID
-      operationId: updateClientById
+        - Customer
+      description: Updates a customer by ID
+      operationId: updateCustomerById
       parameters:
         - name: id
           in: path
@@ -170,24 +170,24 @@ paths:
             type: integer
             format: int32
       requestBody:
-        description: Client data to be updated
+        description: Customer data to be updated
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ClienteInterface'
+              $ref: '#/components/schemas/CustomerInterface'
       responses:
         '200':
-          description: Client successfully updated
+          description: Customer successfully updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClienteInterface'
+                $ref: '#/components/schemas/CustomerInterface'
     delete:
       tags:
-        - Cliente
-      description: Deletes a client by ID
-      operationId: deleteClientById
+        - Customer
+      description: Deletes a customer by ID
+      operationId: deleteCustomerById
       parameters:
         - name: id
           in: path
@@ -197,14 +197,14 @@ paths:
             format: int32
       responses:
         '204':
-          description: Client successfully deleted
+          description: Customer successfully deleted
 
-  /Administradores:
+  /Administrators:
     get:
       tags:
-        - Administrador
+        - Administrator
       description: Returns all registered administrators
-      operationId: getAdministradores
+      operationId: getAdministrators
       responses:
         '200':
           description: All the administrators
@@ -213,32 +213,32 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/AdministradorInterface'
+                  $ref: '#/components/schemas/AdministratorInterface'
     post:
       tags:
-        - Administrador
+        - Administrator
       description: Creates a new administrator
-      operationId: createAdministrador
+      operationId: createAdministrator
       requestBody:
         description: Administrator to be created
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AdministradorInterface'
+              $ref: '#/components/schemas/AdministratorInterface'
       responses:
         '201':
           description: Administrator successfully created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdministradorInterface'
-  /Administradores/{id}:
+                $ref: '#/components/schemas/AdministratorInterface'
+  /Administrators/{id}:
     get:
       tags:
-        - Administrador
+        - Administrator
       description: Returns a single administrator by ID
-      operationId: getAdministradorById
+      operationId: getAdministratorById
       parameters:
         - name: id
           in: path
@@ -252,12 +252,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdministradorInterface'
+                $ref: '#/components/schemas/AdministratorInterface'
     put:
       tags:
-        - Administrador
+        - Administrator
       description: Updates an administrator by ID
-      operationId: updateAdministradorById
+      operationId: updateAdministratorById
       parameters:
         - name: id
           in: path
@@ -271,19 +271,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AdministradorInterface'
+              $ref: '#/components/schemas/AdministratorInterface'
       responses:
         '200':
           description: Administrator successfully updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdministradorInterface'
+                $ref: '#/components/schemas/AdministratorInterface'
     delete:
       tags:
-        - Administrador
+        - Administrator
       description: Deletes an administrator by ID
-      operationId: deleteAdministradorById
+      operationId: deleteAdministratorById
       parameters:
         - name: id
           in: path
@@ -297,43 +297,43 @@ paths:
 
 components:
   schemas:
-    FilmeInterface:
+    MovieInterface:
       type: object
       properties:
         id:
           type: integer
           format: int32
-        titulo:
+        title:
           type: string
-        sinopse:
+        synopsis:
           type: string
-        genero:
+        genre:
           type: string
-        classificacaoIndicativa:
+        rating:
           type: string
-    ClienteInterface:
+    CustomerInterface:
       type: object
       properties:
         id:
           type: integer
           format: int32
-        nome:
+        name:
           type: string
         login:
           type: object
           additionalProperties:
             type: string
-        listaDeFilmes:
+        moviesList:
           type: array
           items:
-            $ref: '#/components/schemas/FilmeInterface'
-    AdministradorInterface:
+            $ref: '#/components/schemas/MovieInterface'
+    AdministratorInterface:
       type: object
       properties:
         id:
           type: integer
           format: int32
-        nome:
+        name:
           type: string
         login:
           type: object
