@@ -12,34 +12,29 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-model Client {
-  id            Int     @id @default(autoincrement())
-  name          String
-  login         String
-  collectionOfMovies Movie[] @relation("ClientMovies")
+model Customer {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  login              Login    @relation(fields: [loginId], references: [id])
+  loginId            Int      @unique
+  collectionOfMovies Movie[]  @relation("CustomerMovies")
 }
 
 model Movie {
-  id                    Int      @id @default(autoincrement())
-  title                String
-  synopsis               String
-  genre                String
-  ageRating String
-  customers              Client[] @relation("ClientMovies")
+  id                    Int       @id @default(autoincrement())
+  title                 String
+  synopsis              String
+  status                String    @default("AVAILABLE")
+  genre                 String
+  ageRating             String
+  customers             Customer[] @relation("CustomerMovies")
+}
+
+model Login {
+  id          Int       @id @default(autoincrement())
+  username    String    @unique
+  password    String
+  customer    Customer?  @relation
 }
 

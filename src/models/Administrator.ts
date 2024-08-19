@@ -1,15 +1,16 @@
 import { Movie } from './Movie';
 import { Customer } from './Customer';
+import { Login } from './Login';
 
 class Administrator {
 
     private id: number;
     private name: string;
-    private login: Map<string, string>;
+    private login: Login;
     private collectionOfMovies: Movie[];
     private collectionOfCustomers: Customer[];    
 
-    constructor(id: number, name: string, login: Map<string, string>) {
+    constructor(id: number, name: string, login: Login) {
         this.id = id;
         this.name = name;
         this.login = login;
@@ -25,7 +26,7 @@ class Administrator {
         return this.name;
     }
 
-    public getLogin(): Map<string, string> {
+    public getLogin(): Login {
         return this.login;
     }
 
@@ -41,5 +42,5 @@ class Administrator {
 export interface AdministratorInterface {
     id: number,
     name: string,
-    login: Map<string, string>
+    login: Login
 }

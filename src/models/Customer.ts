@@ -1,13 +1,14 @@
+import { Login } from "./Login";
 import { Movie } from "./Movie";
 
 export class Customer {
 
     private id: number;
     private name: string;
-    private login: Map<string, string>;
+    private login: Login;
     private collectionOfMovies: Movie[];
 
-    constructor(id: number, name: string, login: Map<string, string>, collectionOfMovies: Movie[]) {
+    constructor(id: number, name: string, login: Login, collectionOfMovies: Movie[]) {
         this.id = id;
         this.name = name;
         this.login = login;
@@ -22,18 +23,22 @@ export class Customer {
         return this.name;
     }
 
-    public getLogin(): Map<string, string> {
+    public getLogin(): Login {
         return this.login;
     }
 
     public getCollectionOfMovies(){
         return this.collectionOfMovies;
     }
+
+    public setName(newName:string) {
+        this.name = newName;
+    }
 }
 
 export interface CustomerInterface {
     id: number,
     name: string,
-    login: Map<string, string>,
+    login: Login,
     collectionOfMovies: Movie[]
 }

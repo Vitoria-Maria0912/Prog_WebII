@@ -34,20 +34,32 @@ export class CustomersController {
 
   // POST to add a new customer
   async createCustomer(req: Request, res: Response) {
-    const { name, login, collectionOfMovies } = req.body;
-    try {
-      if (!name || !login) {
-        return res.status(400).json({ error: 'All fields required!' });
-      }
+    const { name, login } = req.body;
+    const { username, password } = login || {};
 
-      const newCustomer = await prisma.customer.create({
-        data: { name, login },
-      });
-      res.status(201).json(newCustomer);
+    try {
+        if (!name || !username || !password) {
+            return res.status(400).json({ error: 'All fields required!' });
+        }
+
+        const newCustomer = await prisma.customer.create({
+            data: {
+                name,
+                login: {
+                    create: {
+                        username,
+                        password
+                    }
+                },
+            }
+        });
+        res.status(201).json(newCustomer);
+        // colocar verificação de erro para o login
     } catch (error) {
-      res.status(500).json({ error: 'Error trying to create a customer!' });
+        res.status(500).json({ error: 'Error trying to create a customer!' });
     }
   }
+
 
   // PUT to update customer
   async updateCustomer(req: Request, res: Response) {
